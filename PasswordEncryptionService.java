@@ -32,6 +32,7 @@ public class PasswordEncryptionService {
     }
 
 
+  
     public static byte[] generateSalt() throws NoSuchAlgorithmException {
         // VERY important to use SecureRandom instead of just Random
         SecureRandom random=SecureRandom.getInstance("SHA1PRNG");
@@ -42,7 +43,7 @@ public class PasswordEncryptionService {
     }
 
 
-   
+  
     public static boolean authenticate(String attemptedPassword, byte[] encryptedPassword, byte[] salt)
             throws NoSuchAlgorithmException, InvalidKeySpecException {
 
@@ -54,7 +55,7 @@ public class PasswordEncryptionService {
     }
 
 
-    //DO NOT CHANGE THIS METHOD UNLESS TO ADD PRINT STATEMENTS
+   
     public static byte[] getEncryptedPassword(String password, byte[] salt)
             throws NoSuchAlgorithmException, InvalidKeySpecException {
 

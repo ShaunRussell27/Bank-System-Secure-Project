@@ -40,7 +40,7 @@ public class AccountTester {
         String password = props.getProperty("DB_PASSWORD");
 
         try {
-            // Load MySQL JDBC Driver (Optional for JDBC 4.0+)
+            // Load MySQL JDBC Driver 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Connect to database
