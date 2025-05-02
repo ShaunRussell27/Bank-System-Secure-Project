@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 public class BankAccount {
 
-    private Integer account_id; // Unique identifier for the account (not used in this example)
-    private String accountHolder; 
+    private final Integer account_id;
+    // Unique identifier for the account 
     private double balance;
 
     
@@ -27,7 +27,7 @@ public class BankAccount {
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                this.accountHolder = rs.getString("account_holder_name");
+                rs.getString("account_holder_name");
                 this.balance = rs.getDouble("balance");
             } else {
                 System.out.println("Account not found in the database. Setting balance to 0.");
@@ -62,7 +62,6 @@ public class BankAccount {
      */
     public BankAccount(int account_id,String accountHolder) {
         this.account_id = account_id;
-        this.accountHolder = accountHolder;
         loadBalanceFromDatabase(); // Load balance from database
     }
 

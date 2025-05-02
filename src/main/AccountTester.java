@@ -65,7 +65,7 @@ public class AccountTester {
             System.out.println("1. Login");
             System.out.println("2. Sign up");
             System.out.println("3. exit");
-            System.out.println("enter 'exit' at any stage in system to exit");
+            System.out.println("Type 'exit' at any time to quit the program.");
             System.out.print("Please select an option (1, 2 or 3): ");
             try {
                 int choice = scanner.nextInt();
@@ -291,52 +291,52 @@ public class AccountTester {
     
                 switch (choice) {
                     case 1: // Deposit
-                        double depositAmount;
-                        while (true) {
-                            System.out.print("Enter amount to deposit or type 'exit' to quit: ");
-                            String input = scanner.nextLine();
-                            if (input.equalsIgnoreCase("exit")) {
-                                System.out.println("Exiting deposit process...");
-                                break;
-                            }
-                            try {
-                                depositAmount = Double.parseDouble(input);
-                                if (depositAmount > 0) {
-                                    account.deposit(depositAmount);
-                                    System.out.println("Deposited " + depositAmount + ". New balance: " + account.getBalance());
-                                    break;
-                                } else {
-                                    System.out.println("Amount must be positive. Please try again.");
-                                }
-                            } catch (NumberFormatException e) {
-                                System.out.println("Invalid input. Please enter a valid number.");
-                            }
+                    double depositAmount;
+                    while (true) {
+                        System.out.print("Enter amount to deposit or type 'exit' to quit: ");
+                        String input = scanner.nextLine();
+                        if (input.equalsIgnoreCase("exit")) {
+                            System.out.println("Exiting deposit process...");
+                            break;
                         }
-                        break;
+                        try {
+                            depositAmount = Double.parseDouble(input);
+                            if (depositAmount > 0) {
+                                account.deposit(depositAmount);
+                                System.out.println("Deposited " + depositAmount + ". New balance: " + account.getBalance());
+                                break;
+                            } else {
+                                System.out.println("Amount must be positive. Please try again.");
+                            }
+                        } catch (NumberFormatException e) {
+                            System.out.println("Invalid input. Please enter a valid number.");
+                        }
+                    }
+                    break;
     
                     case 2: // Withdraw
-                        double withdrawAmount;
-                        while (true) {
-                            System.out.print("Enter amount to withdraw or type 'exit' to quit: ");
-                            String input = scanner.nextLine();
-                            if (input.equalsIgnoreCase("exit")) {
-                                System.out.println("Exiting withdrawal process...");
-                                break;
-                            }
-                            try {
-                                withdrawAmount = Double.parseDouble(input);
-                                if (withdrawAmount > 0) {
-                                    account.withdraw(withdrawAmount);
-                                    System.out.println("Withdrawn " + withdrawAmount + ". New balance: " + account.getBalance());
-                                    break;
-                                } else {
-                                    System.out.println("Amount must be positive. Please try again.");
-                                }
-                            } catch (NumberFormatException e) {
-                                System.out.println("Invalid input. Please enter a valid number.");
-                            }
+                    double withdrawAmount;
+                    while (true) {
+                        System.out.print("Enter amount to withdraw or type 'exit' to quit: ");
+                        String input = scanner.nextLine();
+                        if (input.equalsIgnoreCase("exit")) {
+                            System.out.println("Exiting withdrawal process...");
+                            break;
                         }
-                        break;
+                        try {
+                            withdrawAmount = Double.parseDouble(input);
+                            if (withdrawAmount > 0) {
+                                account.withdraw(withdrawAmount);
+                                System.out.println("Withdrawn " + withdrawAmount + ". New balance: " + account.getBalance());
+                                break;
+                            } else {
+                                System.out.println("Amount must be positive. Please try again.");
+                            }
+                        } catch (NumberFormatException e) {
+                            System.out.println("Invalid input. Please enter a valid number.");
+                        }
+                    }
+                    break;
     
                     case 3: // Check Balance
                         System.out.println("Current balance: " + account.getBalance());
