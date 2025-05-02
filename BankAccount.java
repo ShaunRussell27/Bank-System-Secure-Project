@@ -9,6 +9,7 @@ import java.sql.SQLException;
 public class BankAccount {
 
     private final Integer account_id;
+    private String accountHolder;
     // Unique identifier for the account 
     private double balance;
 
