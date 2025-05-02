@@ -42,7 +42,7 @@ public class PasswordEncryptionService {
     }
 
 
-    //DO NOT CHANGE THIS METHOD UNLESS TO ADD PRINT STATEMENS
+    
     public static boolean authenticate(String attemptedPassword, byte[] encryptedPassword, byte[] salt)
             throws NoSuchAlgorithmException, InvalidKeySpecException {
 
@@ -54,7 +54,6 @@ public class PasswordEncryptionService {
     }
 
 
-    //DO NOT CHANGE THIS METHOD UNLESS TO ADD PRINT STATEMENTS
     public static byte[] getEncryptedPassword(String password, byte[] salt)
             throws NoSuchAlgorithmException, InvalidKeySpecException {
 
